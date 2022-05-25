@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+				<title>GetWeb-AI</title>
+</head>
+<body onload="get()" id="body">
+				
+				
+				
+<div id="loader">
+<form action="javascript:void(0)" onsubmit="remo()">
+<div>				
+<h1>GetWeb-AI</h1>
+<input type="search" placeholder="Enter your name..." id="tog" pattern="[a-zA-Z'-'\s]*" title="Name doesn't contain any number or signs" maxlength="8" required>
+<br>
+<input type="submit" id="tog-sub" value="Start">
+</div>
+</form>
+
+<h3 align="center">Made with ❤ by Ashutosh Pandey</h3>
+</div>
+  
+
+  
+  
+<div id="logos">				
+<div id="logo1">
+	<img src="bot.png">G-Bot
+</div>
+<div id="logo2" onclick="ope()">
+	<font id="logore">Online</font>
+	<img src="user.png"><span id="name"></span>
+</div>
+</div><br><br><br><br><br>
+
+
+<div id="menu">
+       <h3 onclick="clos()" id="menu-txt">×</h3>		
+ <a href="index.html" class="menu-link">Home</a>
+ <a href="" class="menu-link">About A.I.</a>
+ <a href="" class="menu-link">Contact me</a>
+ <a href="" class="menu-link">How it works ?</a>
+<a href="javascript:void(0)" onclick="da()" id="dark" class="menu-link">Change theme</a>
+<a href="" type="button" id="follow">Subscribe </a> 
+</div>
+
+
+
+
+
+<div id="full">
+<div id="first">Hello👋, <span id="name2"></span></div>		
+</div>
+
+
+
+<div id="input">
+	  <input type="text" placeholder="Type your message here...." id="int-main" autofocus>
+	  <div onclick="sub()" id="sender"></div>
+</div>			
+
+<style>
+*::placeholder{
+color:#797979;	
+}
+body{
+margin:0;
+padding:0;
+height:10vh;
+background-image:url("bg.jpg"),linear-gradient(45deg, #4740ff, #8419e5 60%);
+background-size:100vw auto;
+background-attachment:fixed;
+background-repeat:repeat;
+user-select:none;
+overflow:hidden;
+}
+
+
+#input{
+width:100%;
+background:#fff;
+position:fixed;
+bottom:0;
+display: flex;
+align-items:center;
+padding:5px 0px;
+height:45px;
+}
+
+#input input{
+background:#fff;
+color:#000;
+padding:5px 15px;
+width:70%;
+height:100%;
+border:none;
+outline:none;
+font-size:17px;
+}
+#sender{
+width:30px;
+height:30px;
+border-radius:100%;
+position:absolute;
+right:15px;
+padding:7px;
+background-image:url("send.png");
+background-color:#3223d3;
+background-size:60% 60%;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+
+
+/* most important */
+#first{
+max-width:200px;
+padding:7px 10px;
+border-top-left-radius:0px;
+border-top-right-radius:13px;
+border-bottom-left-radius:13px;
+border-bottom-right-radius:13px;
+margin:1rem 0rem 0rem 1rem;
+color:#000;
+font-weight:400;
+background:#fff;
+font-size:17px;
+word-wrap: break-word;
+}
+
+#second{
+max-width:200px;
+padding:7px 10px;
+border-top-left-radius:13px;
+border-top-right-radius:0px;
+border-bottom-left-radius:13px;
+border-bottom-right-radius:13px;
+margin:3rem 1rem 0rem auto;
+color:#000;
+font-weight:400;
+background:#fff;
+font-size:17px;
+overflow:scroll;
+word-wrap: break-word;
+}
+
+
+
+
+
+
+
+#logos{
+width:100%;
+position:fixed;
+top:0;
+backdrop-filter:blur(5px);
+background:#fff;
+height:60px;
+color:#000;
+padding:2px 0px 2px 0px;
+font-size:14px;
+font-weight:500;
+display: flex;
+align-items:center;
+justify-content:space-between;
+}
+#logo1{
+display: flex;
+height:60px;
+flex-direction:column;
+align-items:center;
+justify-content:center;	
+margin-left:0.7rem;
+}
+#logo2{
+display: flex;
+height:60px;
+flex-direction:column;
+align-items:center;
+justify-content:center;	
+margin-right:0.7rem;
+}
+
+#logore{		
+position:absolute;
+margin-right:6.3rem;
+margin-bottom:0.5rem;
+font-size:16px;
+color:#65ff00;
+letter-spacing:0.5px;
+text-shadow:0px 0px 1px #65ff00;
+}
+
+#logo1 img{
+width:45px;
+height:45px;
+
+}
+#logo2 img{
+width:45px;
+height:45px;
+}
+
+#menu{
+width:249.9px;
+background:#fff;
+padding:1px;
+display:none;
+border-top-left-radius:20px;
+border-top-right-radius:0px;
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;
+position:absolute;
+border-left:6px double #8419e5;
+border-right:6px double #4740ff;
+border-top:6px double #4740ff;
+border-bottom:6px double #8419e5;
+right:17px;
+top:73px;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+.menu-link{
+color:#000;
+margin-bottom:1.5rem;
+text-decoration:none;
+font-size:18px;
+}
+#menu-txt{
+align-self:flex-end;
+margin:8px 13px 0 0;
+font-size:38px;
+font-weight:bolder;
+color:#000;
+}
+
+#follow{
+color:#fff;
+padding:10px 30px;
+font-size:18px;
+font-weight:bolder;
+background:linear-gradient(45deg, #4740ff, #8419e5 60%);
+border-radius:50px;
+margin-bottom:0.5rem;
+text-decoration:none;
+letter-spacing:1px;
+}
+#dark{
+color:#000;			
+}
+#full{
+height:calc(100vh - 150px);
+background:transparent;
+margin-bottom:45px;
+top:85px;
+width:100%;
+position:absolute;
+overflow:scroll;
+}
+
+
+
+/* preloader */
+#loader{
+width:100%;
+height:100vh;
+background:linear-gradient(45deg, #4740ff, #8419e5 80%);
+position:absolute;	
+z-index:999999999;
+color:#fff;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center; 
+}
+#loader div{
+display:flex;
+flex-direction:column;
+align-items:center;justify-content:center; 
+margin-bottom:4rem;
+}
+#loader h1{
+font-size:40px;
+margin-bottom:2rem;
+text-shadow:0px 0px 10px #fff;
+}
+#loader h3{
+position:absolute;
+bottom:0px;
+font-size:17px;
+}
+#loader input{
+width:260px;
+background:#fff;
+padding:12px 14px;
+border:8px double #8419e5;
+border-radius:50px;
+font-size:16px;
+outline:none;
+}
+#loader input[type="submit"]{
+width:150px;
+background:linear-gradient(-45deg, #4740ff, #8419e5 60%);
+padding:9px 13px;
+border:4px solid #fff;
+border-radius:50px;
+color:#fff;
+font-size:17px;
+outline:none;
+}
+
+</style>				
+<script src="script.js"></script>
+<script>
+window.addEventListener('contextmenu', function (e) {
+  document.body.innerHTML += ''
+  e.preventDefault();
+}, false);
+</script>
+<script>
+window.onload = checkInternetConnection; 
+function checkInternetConnection() {
+var box = document.getElementById("logore");
+ var isOnLine = navigator.onLine; 
+ if (isOnLine) {
+box.style.color ="#65ff00";
+  } 
+  else {
+box.style.color ="#ff0a00";
+box.innerHTML ="Offline"; 
+box.style.textShadow ="0px 0px 2px #ff0a00";
+  }
+     } 
+</script>
+
+</body>
+</html>
