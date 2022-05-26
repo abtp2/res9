@@ -10,12 +10,14 @@
 				
 				
 <div id="loader">
-<form action="javascript:void(0)" onsubmit="remo()">
+<form action="javascript:void(0)" onsubmit="setTimeout('remo()', 3000)">
 <div>				
 <h1>GetWeb-AI</h1>
 <input type="search" placeholder="Enter your name..." id="tog" pattern="[a-zA-Z'-'\s]*" title="Name doesn't contain any number or signs" maxlength="8" required>
 <br>
-<input type="submit" id="tog-sub" value="Start">
+<input type="submit" id="tog-sub" onclick="lo()" value="Start">
+<br>
+<div id="loadi"></div>
 </div>
 </form>
 
@@ -27,7 +29,7 @@
   
 <div id="logos">				
 <div id="logo1">
-	<img src="bot.png">G-Bot
+	<img src="bot.png">Get-Bot
 </div>
 <div id="logo2" onclick="ope()">
 	<font id="logore">Online</font>
@@ -42,7 +44,16 @@
  <a href="" class="menu-link">About A.I.</a>
  <a href="" class="menu-link">Contact me</a>
  <a href="" class="menu-link">How it works ?</a>
-<a href="javascript:void(0)" onclick="da()" id="dark" class="menu-link">Change theme</a>
+<details>
+<summary id="dark" class="menu-link">Change theme</summary>
+<div id="choose">
+<h1 onclick="da()" id="yellow">■</h1>
+<h1 onclick="dad()" id="dark-green">■</h1>
+<h1 onclick="dada()" id="white-space">■</h1>
+<h1 onclick="dadad()" id="purple">■</h1>
+</div>
+</details>
+
 <a href="" type="button" id="follow">Subscribe </a> 
 </div>
 
@@ -253,12 +264,13 @@ letter-spacing:1px;
 }
 #dark{
 color:#000;			
+margin-bottom:1rem;	
 }
 #full{
-height:calc(100vh - 150px);
+height:calc(100vh - 121px);
 background:transparent;
 margin-bottom:45px;
-top:85px;
+top:65px;
 width:100%;
 position:absolute;
 overflow:scroll;
@@ -269,7 +281,7 @@ overflow:scroll;
 /* preloader */
 #loader{
 width:100%;
-height:100vh;
+height:100%;
 background:linear-gradient(45deg, #4740ff, #8419e5 80%);
 position:absolute;	
 z-index:999999999;
@@ -288,6 +300,7 @@ margin-bottom:4rem;
 #loader h1{
 font-size:40px;
 margin-bottom:2rem;
+margin-top:7rem;
 text-shadow:0px 0px 10px #fff;
 }
 #loader h3{
@@ -313,6 +326,53 @@ border-radius:50px;
 color:#fff;
 font-size:17px;
 outline:none;
+}
+
+
+#choose{
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:14px;
+letter-spacing:4px;
+padding:1px 1px 1.5px 1px;
+margin:0 0 1rem 0;
+height:30px;
+background:#f2f2f2;
+border-radius:10px;
+}
+#yellow{
+color:yellow;
+}
+#dark-green{
+color:#000286;
+}
+#white-space{
+color:orange;				
+}
+#purple{
+color:#8419e5;
+}
+
+
+#loadi{
+width:20px;
+height:20px;
+border-radius:100%;
+border-left:3px solid #fff;
+border-right:3px solid #fff;
+border-bottom:3px solid #fff;
+border-top:3px solid transparent;
+visibility:hidden;
+animation:spinner 1s linear infinite;
+}
+@keyframes spinner{
+form{
+transform:rotate(0deg);
+}				
+to{
+transform:rotate(360deg);
+}
 }
 
 </style>				
