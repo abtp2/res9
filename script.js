@@ -28,14 +28,17 @@ node.setAttribute("id", "first");
 
 
 function sub() {
+var pho = /^[0-9()+\-*.\/\s]*$/gm;
 const x =document.getElementById("int-main").value;
+var phoneResult = pho.test(x);
 const node = document.createElement("div");
 const textnode = document.createTextNode(x);
 node.appendChild(textnode);
 document.getElementById("full").appendChild(node);
 node.setAttribute("id", "second");
-document. getElementById("int-main"). value = "";
-
+document.getElementById("int-main").focus()
+document. getElementById("int-main").value = "";
+document.getElementById("sound").play();
 
 
 if (x.indexOf('tude') > -1) { 
@@ -44,6 +47,14 @@ const textnode = document.createTextNode("Ok, which class are you in ?");
 node.appendChild(textnode);
 document.getElementById("full").appendChild(node);
 node.setAttribute("id", "first");
+ }
+ else if(phoneResult == true){
+const  evo =eval(x);
+const node = document.createElement("div");
+const textnode = document.createTextNode(evo);
+node.appendChild(textnode);
+document.getElementById("full").appendChild(node);
+node.setAttribute("id", "first"); 				 
  }
  else if (x.indexOf('Hello') > -1)  {
 const node = document.createElement("div");
@@ -108,13 +119,6 @@ node.appendChild(textnode);
 document.getElementById("full").appendChild(node);
 node.setAttribute("id", "first"); 				
  } 
-else if (x.indexOf('10') > -1)  {
-const node = document.createElement("div");
-const textnode = document.createTextNode("Ok, which subject you like most ?");
-node.appendChild(textnode);
-document.getElementById("full").appendChild(node);
-node.setAttribute("id", "first"); 				
- }  
 else if (x.indexOf('10Th') > -1)  {
 const node = document.createElement("div");
 const textnode = document.createTextNode("Ok, which subject you like most ?");

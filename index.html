@@ -6,14 +6,19 @@
 				<title>GetWeb-AI</title>
 </head>
 <body onload="get()" id="body">
-				
-				
+
+<audio hidden id="sound">
+		<source src="send (mp3cut.net).mp3">
+</audio>
+<!-- <audio id="speak" autoplay hidden>
+	    <source src="speak.mp3">
+</audio> -->
 				
 <div id="loader">
 <form action="javascript:void(0)" onsubmit="setTimeout('remo()', 3000)">
 <div>				
 <h1>GetWeb-AI</h1>
-<input type="search" placeholder="Enter your name..." id="tog" pattern="[a-zA-Z'-'\s]*" title="Name doesn't contain any number or signs" maxlength="8" required>
+<input type="search" placeholder="Enter your name..." id="tog" pattern="[a-zA-Z'-'\s]*" title="Name doesn't contain any number or signs" maxlength="8" required autofocus>   
 <br>
 <input type="submit" id="tog-sub" onclick="lo()" value="Start">
 <br>
@@ -68,13 +73,14 @@
 
 
 <div id="input">
-	  <input type="text" placeholder="Type your message here...." id="int-main" autofocus>
+	  <input type="text" placeholder="Type your message here...." id="int-main">
+	  <img src="mic.png" onclick="shor()" id="shore">
 	  <div onclick="sub()" id="sender"></div>
 </div>			
 
 <style>
 *::placeholder{
-color:#797979;	
+color:#5a5a5a;	
 }
 body{
 margin:0;
@@ -104,7 +110,7 @@ height:45px;
 background:#fff;
 color:#000;
 padding:5px 15px;
-width:70%;
+width:65%;
 height:100%;
 border:none;
 outline:none;
@@ -156,6 +162,8 @@ background:#fff;
 font-size:17px;
 overflow:scroll;
 word-wrap: break-word;
+display: flex;
+flex-direction:column;
 }
 
 
@@ -332,26 +340,34 @@ outline:none;
 #choose{
 display:flex;
 align-items:center;
-justify-content:center;
-font-size:14px;
-letter-spacing:4px;
-padding:1px 1px 1.5px 1px;
+justify-content:space-around;
+font-size:10px;
+letter-spacing:8px;
+padding:7px 5px;
 margin:0 0 1rem 0;
 height:30px;
-background:#f2f2f2;
-border-radius:10px;
+background:#000;
+border-radius:2px;
 }
 #yellow{
-color:yellow;
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+background:linear-gradient(75deg,#fff100,#1cff15);
 }
 #dark-green{
-color:#000286;
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+background:linear-gradient(45deg,#fff,#0003ff);
 }
 #white-space{
-color:orange;				
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+background:linear-gradient(-45deg,#ffbd40,#fff);
 }
 #purple{
-color:#8419e5;
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+background:linear-gradient(45deg,#0003ff,#8419e5);
 }
 
 
@@ -375,8 +391,45 @@ transform:rotate(360deg);
 }
 }
 
+
+#second::after{
+content:"✔";
+font-size:12px;
+align-self:flex-end;
+width:5px;
+margin-right:2px;
+}
+
+
+#input img{
+width:22px;
+margin-left:8px;
+padding:8px;
+border-radius:100%;
+}
+
+.shor{
+width:22px;
+margin-left:8px;
+animation:1s grow linear infinite;
+border-radius:100%;
+padding:8px;
+box-shadow:0px 0px 0px #ff6a6a , inset 0px 0px 0px #ff6a6a;
+}
+@keyframes grow {
+0%{
+box-shadow:0px 0px 0px #ff6a6a , inset 0px 0px 0px #ff6a6a;
+}
+50%{
+box-shadow:0px 0px 1px 2px #ff6a6a;
+}
+100%{
+box-shadow:0px 0px 0px #ff6a6a , inset 0px 0px 0px #ff6a6a;
+}
+}
 </style>				
 <script src="script.js"></script>
+<script src="sound.js"></script>
 <script>
 window.onload = checkInternetConnection; 
 function checkInternetConnection() {
