@@ -39,6 +39,7 @@ node.setAttribute("id", "second");
 document.getElementById("int-main").focus()
 document. getElementById("int-main").value = "";
 document.getElementById("sound").play();
+document.getElementById("shore").classList.remove("shor");
 
 
 if (x.indexOf('tude') > -1) { 
